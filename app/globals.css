@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -37,5 +37,11 @@ body {
 .finger-paint {
   font-family: "Finger Paint", sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+.mukta {
+  font-family: "Mukta", sans-serif;
+  font-weight: 300;
   font-style: normal;
 }

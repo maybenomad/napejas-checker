@@ -39,8 +39,8 @@ function MintDetail({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-x-3 text-xl">
-      <div className="w-[130px] font-bold">{name}</div>
+    <div className="flex gap-x-3 text-md md:text-lg">
+      <div className="w-[120px] font-bold">{name}</div>
       <div className="">{children}</div>
     </div>
   );
@@ -48,11 +48,20 @@ function MintDetail({
 
 function MintDetails() {
   return (
-    <div className={csx("flex flex-col items-center p-4 mb-6")}>
-      <h1 className="text-4xl mb-4 finger-paint uppercase text-[#f5eabd]">
+    <div className={csx("flex flex-col items-center p-4 mb-4")}>
+      <h1 className="text-2xl md:text-3xl mb-4 finger-paint uppercase text-[#f5eabd]">
+        - What is Napejas? -
+      </h1>
+      <div className="text-md md:text-xl mb-6 mukta">
+        Napejas is a new NFT collection by{" "}
+        <Link href="https://x.com/CaaLabs">CAA Labs</Link> minting on Injective.
+        All Injective wallets that were holding NFTs verified through Apello as
+        of the snapshot on February 28th are eligible for the whitelist.
+      </div>
+      <h1 className="text-2xl md:text-3xl mb-4 finger-paint uppercase text-[#f5eabd]">
         - Mint Details -
       </h1>
-      <div className="flex flex-col">
+      <div className="flex flex-col mukta">
         <MintDetail name="Supply">2900 NFTs</MintDetail>
         <MintDetail name="WL">0.2 $INJ</MintDetail>
         <MintDetail name="Public">0.3 $INJ</MintDetail>
@@ -65,24 +74,43 @@ function MintDetails() {
   );
 }
 
+function Link({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      className="text-[#f5eabd] hover:underline transition duration-100"
+    >
+      {children}
+    </a>
+  );
+}
+
 export default function Home() {
   const [isInputEmpty, setIsInputEmpty] = useState(true);
   const [isOnWhitelist, setIsOnWhitelist] = useState<Eligibility>(null);
 
   return (
-    <main className="flex flex-col h-full items-center justify-center">
-      <div className="flex flex-row justify-center align-center">
+    <main className="flex flex-col md:h-full items-center justify-center">
+      <div className="flex flex-col md:flex-row justify-center align-center">
         <Image
-          className="mx-8"
+          className="mx-8 hidden md:block"
           src="/napejas_mosaic.png"
-          height={500}
-          width={500}
+          height={610}
+          width={610}
           alt="Napejas"
           priority
         />
-        <div className="flex flex-col px-8 w-[600px]">
+        <Image
+          className="m-8 mb-4 md:hidden"
+          src="/napejas_mosaic.png"
+          height={300}
+          width={300}
+          alt="Napejas"
+          priority
+        />
+        <div className="relative flex flex-col px-8 w-full md:w-[600px] mb-12 md:mb-0">
           <MintDetails />
-          <div className="text-lg py-2">
+          <div className="text-md md:text-lg pb-2 mukta">
             Paste your Injective address to see if you&#39;re on the whitelist:
           </div>
           <input
