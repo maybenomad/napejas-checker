@@ -11,10 +11,11 @@ function NotEligible() {
   return (
     <div
       className={csx(
-        "p-4 my-2 rounded bg-apered border border-apered bg-opacity-50"
+        "text-sm p-4 my-2 rounded bg-apered border border-apered bg-opacity-50"
       )}
     >
-      Sorry, your wallet is not eligible.
+      Sorry, your wallet is not eligible. If you think this is a mistake, open a
+      ticket on <Link href="https://discord.gg/caalabs">our Discord</Link>.
     </div>
   );
 }
@@ -23,7 +24,7 @@ function Eligible() {
   return (
     <div
       className={csx(
-        "p-4 my-2 rounded bg-apegreen border border-apegreen bg-opacity-50"
+        "text-sm p-4 my-2 rounded bg-apegreen border border-apegreen bg-opacity-50"
       )}
     >
       Your wallet is eligible! :&#41;
@@ -95,12 +96,12 @@ export default function Home() {
 
   return (
     <main className="flex flex-col md:h-full items-center justify-center">
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
         <Image
           className="mx-8 hidden md:block"
           src="/napejas_mosaic.png"
-          height={610}
-          width={610}
+          height={630}
+          width={630}
           alt="Napejas"
           priority
         />
