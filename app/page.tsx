@@ -57,7 +57,7 @@ function MintDetails() {
         <Link href="https://x.com/CaaLabs">CAA Labs</Link>, the team behind{" "}
         <Link href="https://apello.xyz">Apello</Link>. All Injective wallets
         that were holding NFTs verified through Apello as of the snapshot on
-        February 28th are eligible for the whitelist.
+        February 27th are eligible for the whitelist.
       </div>
       <h1 className="text-2xl md:text-3xl mb-4 finger-paint uppercase text-[#f5eabd]">
         - Mint Details -
