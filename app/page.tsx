@@ -5,6 +5,8 @@ import checkWhitelist from "@/actions/checkWhitelist";
 import csx from "@/util/csx";
 import { useState } from "react";
 
+type Eligibility = boolean | null;
+
 function NotEligible() {
   return (
     <div
@@ -24,12 +26,38 @@ function Eligible() {
         "p-4 my-2 rounded bg-apegreen border border-apegreen bg-opacity-50"
       )}
     >
-      Your wallet is eligible!
+      Your wallet is eligible! :&#41;
     </div>
   );
 }
 
-type Eligibility = boolean | null;
+function MintDetail({ name, children }) {
+  return (
+    <div className="flex gap-x-3 text-xl">
+      <div className="w-[130px] font-bold">{name}</div>
+      <div className="">{children}</div>
+    </div>
+  );
+}
+
+function MintDetails() {
+  return (
+    <div className={csx("flex flex-col items-center p-4 mb-6")}>
+      <h1 className="text-4xl mb-4 finger-paint uppercase text-[#f5eabd]">
+        - Mint Details -
+      </h1>
+      <div className="flex flex-col">
+        <MintDetail name="Supply">2900 NFTs</MintDetail>
+        <MintDetail name="WL">0.2 $INJ</MintDetail>
+        <MintDetail name="Public">0.3 $INJ</MintDetail>
+        <MintDetail name="Mint Date">05/03/2024 19.30 UTC</MintDetail>
+        <MintDetail name="Marketplace">
+          <a href="#">Talis Protocol</a>
+        </MintDetail>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [isInputEmpty, setIsInputEmpty] = useState(true);
@@ -39,25 +67,27 @@ export default function Home() {
     <main className="flex flex-col h-full items-center justify-center">
       <div className="flex flex-row justify-center align-center">
         <Image
+          className="mx-8"
           src="/napejas_mosaic.png"
           height={500}
           width={500}
           alt="Napejas"
+          priority
         />
-        <div className="flex flex-col px-8">
+        <div className="flex flex-col px-8 w-[600px]">
+          <MintDetails />
           <div className="text-lg py-2">
-            Paste your Injective address below to see if you're on the
-            whitelist:
+            Paste your Injective address to see if you're on the whitelist:
           </div>
           <input
             className={csx(
               "p-3 my-2",
-              "rounded-md text-white",
+              "rounded-lg text-white",
               "bg-transparent",
-              "border-borderwhite border"
+              "border-borderwhite border-2"
             )}
             type="text"
-            placeholder="Your Address"
+            placeholder="Your Injective Address"
             onChange={(e) => {
               if (!e.currentTarget.value) {
                 setIsInputEmpty(true);
