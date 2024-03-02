@@ -31,7 +31,13 @@ function Eligible() {
   );
 }
 
-function MintDetail({ name, children }) {
+function MintDetail({
+  name,
+  children,
+}: {
+  name: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex gap-x-3 text-xl">
       <div className="w-[130px] font-bold">{name}</div>
