@@ -91,7 +91,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col md:h-full items-center justify-center">
-      <div className="flex flex-col md:flex-row justify-center align-center">
+      <div className="flex flex-col md:flex-row justify-center items-center">
         <Image
           className="mx-8 hidden md:block"
           src="/napejas_mosaic.png"
