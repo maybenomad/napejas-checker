@@ -53,17 +53,20 @@ function MintDetails() {
         - What is Napejas? -
       </h1>
       <div className="text-md md:text-xl mb-6 mukta">
-        Napejas is a new NFT collection by{" "}
-        <Link href="https://x.com/CaaLabs">CAA Labs</Link> minting on Injective.
-        All Injective wallets that were holding NFTs verified through Apello as
-        of the snapshot on February 28th are eligible for the whitelist.
+        Napejas is a new NFT collection on Injective by{" "}
+        <Link href="https://x.com/CaaLabs">CAA Labs</Link>, the team behind{" "}
+        <Link href="https://apello.xyz">Apello</Link>. All Injective wallets
+        that were holding NFTs verified through Apello as of the snapshot on
+        February 28th are eligible for the whitelist.
       </div>
       <h1 className="text-2xl md:text-3xl mb-4 finger-paint uppercase text-[#f5eabd]">
         - Mint Details -
       </h1>
       <div className="flex flex-col mukta">
         <MintDetail name="Supply">2900 NFTs</MintDetail>
-        <MintDetail name="WL">0.2 $INJ</MintDetail>
+        <MintDetail name="WL">
+          0.2 $INJ <i>&#40;Max 3 per wallet&#41;</i>
+        </MintDetail>
         <MintDetail name="Public">0.3 $INJ</MintDetail>
         <MintDetail name="Mint Date">05/03/2024 19.30 UTC</MintDetail>
         <MintDetail name="Marketplace">
@@ -79,6 +82,7 @@ function Link({ href, children }: { href: string; children: React.ReactNode }) {
     <a
       href={href}
       className="text-[#f5eabd] hover:underline transition duration-100"
+      target="_blank"
     >
       {children}
     </a>
