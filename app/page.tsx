@@ -77,7 +77,7 @@ export default function Home() {
         <div className="flex flex-col px-8 w-[600px]">
           <MintDetails />
           <div className="text-lg py-2">
-            Paste your Injective address to see if you're on the whitelist:
+            Paste your Injective address to see if you&#39;re on the whitelist:
           </div>
           <input
             className={csx(
